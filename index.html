@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,56 +48,96 @@
         <section id="sobre-mi">
             <h2>Sobre mí</h2>
 
-            <p>
-                Soy estudiante de Ingeniería de sistemas y me interesa el desarrollo
-                de software, la inteligencia artificial y las tecnologías web.
-            </p>
+            <div class="sobre-mi-contenedor">
+                <div class="sobre-mi-contenido">
+                    <h3>¿Quién soy?</h3>
+
+                    <p>
+                        Soy estudiante interesado en el desarrollo de software,
+                        las tecnologías web y la inteligencia artificial.
+                        Me gusta aprender nuevas herramientas, desarrollar proyectos
+                        prácticos y fortalecer constantemente mis habilidades
+                        de programación.
+                    </p>
+
+                    <p>
+                        Además del área tecnológica, disfruto actividades creativas
+                        y personales que me permiten explorar otros intereses.
+                    </p>
+
+                    <div class="intereses-grid">
+                        <article class="interes-card">
+                            <h4>Intereses profesionales</h4>
+
+                            <div class="intereses-lista">
+                                <span>🌱 Desarrollo web</span>
+                                <span>🤖 Inteligencia artificial</span>
+                                <span>💻 Software</span>
+                            </div>
+                        </article>
+
+                        <article class="interes-card">
+                            <h4>Intereses personales</h4>
+
+                            <div class="intereses-lista">
+                                <span>🌱 Jardinería</span>
+                                <span>🎮 Videojuegos</span>
+                                <span>📷 Fotografía</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <a href="#contacto" class="btn-contacto">
+                        Contáctame
+                    </a>
+                </div>
+            </div>
         </section>
 
 
         <!-- HABILIDADES -->
         <section id="habilidades">
-    <h2>Habilidades</h2>
+            <h2>Habilidades</h2>
 
-    <p class="descripcion-seccion">
-        Tecnologías y herramientas con las que he trabajado durante mi formación
-        académica y proyectos personales.
-    </p>
+            <p class="descripcion-seccion">
+                Tecnologías y herramientas con las que he trabajado durante mi formación
+                académica y proyectos personales.
+            </p>
 
-    <div class="habilidades-contenedor">
+            <div class="habilidades-contenedor">
 
-        <article class="habilidad-categoria">
-            <h3>Frontend</h3>
+                <article class="habilidad-categoria">
+                    <h3>Frontend</h3>
 
-            <div class="habilidades-lista">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
+                    <div class="habilidades-lista">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </article>
+
+                <article class="habilidad-categoria">
+                    <h3>Programación</h3>
+
+                    <div class="habilidades-lista">
+                        <span>Java</span>
+                        <span>Python</span>
+                        <span>C++</span>
+                    </div>
+                </article>
+
+                <article class="habilidad-categoria">
+                    <h3>Herramientas</h3>
+
+                    <div class="habilidades-lista">
+                        <span>Git</span>
+                        <span>GitHub</span>
+                        <span>VS Code</span>
+                    </div>
+                </article>
+
             </div>
-        </article>
-
-        <article class="habilidad-categoria">
-            <h3>Programación</h3>
-
-            <div class="habilidades-lista">
-                <span>Java</span>
-                <span>Python</span>
-                <span>C++</span>
-            </div>
-        </article>
-
-        <article class="habilidad-categoria">
-            <h3>Herramientas</h3>
-
-            <div class="habilidades-lista">
-                <span>Git</span>
-                <span>GitHub</span>
-                <span>VS Code</span>
-            </div>
-        </article>
-
-    </div>
-</section>
+        </section>
 
 
         <!-- PROYECTOS -->
@@ -136,83 +177,64 @@
 
         <!-- CONTACTO -->
         <section id="contacto">
-    <h2>Contacto</h2>
+            <h2>Contacto</h2>
 
-    <div class="contacto-contenedor">
+            <div class="contacto-contenedor">
 
-        <div class="contacto-info">
-            <h3>Hablemos</h3>
+                <div class="contacto-info">
+                    <h3>Hablemos</h3>
 
-            <p>
-                Si deseas comunicarte conmigo, puedes hacerlo mediante
-                los siguientes medios:
-            </p>
+                    <p>
+                        Si deseas comunicarte conmigo, puedes hacerlo mediante
+                        los siguientes medios:
+                    </p>
 
-            <p>
-                <strong>Correo:</strong>
-                <a href="mailto:correo@ejemplo.com">
-                    gloriaidrobo@unicauca.edu.co
-                </a>
-            </p>
+                    <p>
+                        <strong>Correo:</strong>
+                        <a href="mailto:correo@ejemplo.com">
+                            gloriaidrobo@unicauca.edu.co
+                        </a>
+                    </p>
 
-            <p>
-                <strong>GitHub:</strong>
-                <a href="https://github.com/tuusuario" target="_blank">
-                    github.com/gvalen03
-                </a>
-            </p>
-        </div>
+                    <p>
+                        <strong>GitHub:</strong>
+                        <a href="https://github.com/tuusuario" target="_blank">
+                            github.com/gvalen03
+                        </a>
+                    </p>
+                </div>
 
 
-        <form id="formulario-contacto">
+                <form id="formulario-contacto">
 
-            <div>
-                <label for="nombre">Nombre</label>
-                <input
-                    type="text"
-                    id="nombre"
-                    name="nombre"
-                    placeholder="Ingresa tu nombre"
-                >
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre">
+                    </div>
+
+                    <div>
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com">
+                    </div>
+
+                    <div>
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" placeholder="Motivo del mensaje">
+                    </div>
+
+                    <div>
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje"></textarea>
+                    </div>
+
+                    <button type="submit">
+                        Enviar mensaje
+                    </button>
+
+                </form>
+
             </div>
-
-            <div>
-                <label for="correo">Correo electrónico</label>
-                <input
-                    type="email"
-                    id="correo"
-                    name="correo"
-                    placeholder="correo@ejemplo.com"
-                >
-            </div>
-
-            <div>
-                <label for="asunto">Asunto</label>
-                <input
-                    type="text"
-                    id="asunto"
-                    name="asunto"
-                    placeholder="Motivo del mensaje"
-                >
-            </div>
-
-            <div>
-                <label for="mensaje">Mensaje</label>
-                <textarea
-                    id="mensaje"
-                    name="mensaje"
-                    placeholder="Escribe tu mensaje"
-                ></textarea>
-            </div>
-
-            <button type="submit">
-                Enviar mensaje
-            </button>
-
-        </form>
-
-    </div>
-</section>
+        </section>
 
     </main>
 
@@ -227,4 +249,5 @@
     <script src="js/script.js"></script>
 
 </body>
+
 </html>
