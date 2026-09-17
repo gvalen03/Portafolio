@@ -172,6 +172,21 @@ if (formulario) {
     });
 }
 
+formulario.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const nombre = document.getElementById("nombre").value;
+    const correo = document.getElementById("correo").value;
+
+    if (nombre === "" || correo === "") {
+        alert("Debes completar los campos obligatorios");
+        return;
+    }
+
+    alert("Formulario enviado correctamente");
+});
+
+
 
 // =========================
 // EVENTO DE TECLADO

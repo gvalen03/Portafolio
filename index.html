@@ -133,51 +133,83 @@
 
         <!-- CONTACTO -->
         <section id="contacto">
-            <h2>Contacto</h2>
+    <h2>Contacto</h2>
 
-            <form id="formulario-contacto">
+    <div class="contacto-contenedor">
 
-                <div>
-                    <label for="nombre">Nombre</label>
+        <div class="contacto-info">
+            <h3>Hablemos</h3>
 
-                    <input
-                        type="text"
-                        id="nombre"
-                        name="nombre"
-                        placeholder="Ingresa tu nombre"
-                    >
-                </div>
+            <p>
+                Si deseas comunicarte conmigo, puedes hacerlo mediante
+                los siguientes medios:
+            </p>
 
+            <p>
+                <strong>Correo:</strong>
+                <a href="mailto:correo@ejemplo.com">
+                    gloriaidrobo@unicauca.edu.co
+                </a>
+            </p>
 
-                <div>
-                    <label for="correo">Correo electrónico</label>
-
-                    <input
-                        type="email"
-                        id="correo"
-                        name="correo"
-                        placeholder="correo@ejemplo.com"
-                    >
-                </div>
-
-
-                <div>
-                    <label for="mensaje">Mensaje</label>
-
-                    <textarea
-                        id="mensaje"
-                        name="mensaje"
-                        placeholder="Escribe tu mensaje"
-                    ></textarea>
-                </div>
+            <p>
+                <strong>GitHub:</strong>
+                <a href="https://github.com/tuusuario" target="_blank">
+                    github.com/gvalen03
+                </a>
+            </p>
+        </div>
 
 
-                <button type="submit">
-                    Enviar
-                </button>
+        <form id="formulario-contacto">
 
-            </form>
-        </section>
+            <div>
+                <label for="nombre">Nombre</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Ingresa tu nombre"
+                >
+            </div>
+
+            <div>
+                <label for="correo">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    placeholder="correo@ejemplo.com"
+                >
+            </div>
+
+            <div>
+                <label for="asunto">Asunto</label>
+                <input
+                    type="text"
+                    id="asunto"
+                    name="asunto"
+                    placeholder="Motivo del mensaje"
+                >
+            </div>
+
+            <div>
+                <label for="mensaje">Mensaje</label>
+                <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    placeholder="Escribe tu mensaje"
+                ></textarea>
+            </div>
+
+            <button type="submit">
+                Enviar mensaje
+            </button>
+
+        </form>
+
+    </div>
+</section>
 
     </main>
 

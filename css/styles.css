@@ -194,6 +194,26 @@ button:hover {
    FORMULARIO
 ========================= */
 
+.contacto-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contacto-info a {
+    color: #333;
+}
+
+.contacto-info a:hover {
+    text-decoration: underline;
+}
+
 #formulario-contacto {
     max-width: 600px;
 
