@@ -206,3 +206,30 @@ document.addEventListener("keydown", (event) => {
 visitas++;
 
 console.log(`Visitas en esta sesión: ${visitas}`);
+
+// =========================
+// HABILIDADES
+// =========================
+
+const habilidades = [
+    {
+        nombre: "HTML",
+        categoria: "frontend"
+    },
+    {
+        nombre: "CSS",
+        categoria: "frontend"
+    },
+    {
+        nombre: "JavaScript",
+        categoria: "frontend"
+    },
+    {
+        nombre: "Java",
+        categoria: "programacion"
+    },
+    {
+        nombre: "Git",
+        categoria: "herramientas"
+    }
+];
