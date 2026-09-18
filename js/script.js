@@ -152,12 +152,19 @@ if (botonProyectos) {
 const formulario = document.getElementById("formulario-contacto");
 
 if (formulario) {
+
     formulario.addEventListener("submit", (event) => {
+
         event.preventDefault();
 
-        const nombreUsuario = document.getElementById("nombre").value;
-        const correo = document.getElementById("correo").value;
-        const mensaje = document.getElementById("mensaje").value;
+        const nombreUsuario =
+            document.getElementById("nombre").value.trim();
+
+        const correo =
+            document.getElementById("correo").value.trim();
+
+        const mensaje =
+            document.getElementById("mensaje").value.trim();
 
         if (
             nombreUsuario === "" ||
@@ -165,28 +172,15 @@ if (formulario) {
             mensaje === ""
         ) {
             alert("Por favor completa todos los campos");
-        } else {
-            alert("Mensaje enviado correctamente");
-            formulario.reset();
+            return;
         }
+
+        alert("Formulario enviado correctamente");
+
+        formulario.reset();
     });
+
 }
-
-formulario.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const nombre = document.getElementById("nombre").value;
-    const correo = document.getElementById("correo").value;
-
-    if (nombre === "" || correo === "") {
-        alert("Debes completar los campos obligatorios");
-        return;
-    }
-
-    alert("Formulario enviado correctamente");
-});
-
-
 
 // =========================
 // EVENTO DE TECLADO
@@ -233,3 +227,179 @@ const habilidades = [
         categoria: "herramientas"
     }
 ];
+
+// =========================
+// MENÚ HAMBURGUESA
+// =========================
+
+const menuToggle = document.getElementById("menu-toggle");
+const hamburger = document.getElementById("hamburger");
+
+const sideMenu = document.getElementById("side-menu");
+const overlay = document.getElementById("overlay");
+const menuLinks = document.querySelectorAll(".menu-link");
+const themeToggle = document.getElementById("theme-toggle");
+
+const lineOne = hamburger.querySelector(".line-one");
+const lineTwo = hamburger.querySelector(".line-two");
+const lineThree = hamburger.querySelector(".line-three");
+
+
+// =========================
+// ANIMACIÓN ☰ → X
+// =========================
+
+const toggleMenuAnimation = gsap.timeline({
+    paused: true
+});
+
+toggleMenuAnimation
+    .to(
+        lineTwo,
+        {
+            duration: 0.075,
+            scaleX: 0
+        },
+        0
+    )
+
+    .to(
+        lineOne,
+        {
+            duration: 0.125,
+            transformOrigin: "50% 50%",
+            y: 8,
+            ease: "power2.inOut"
+        },
+        "slide"
+    )
+
+    .to(
+        lineThree,
+        {
+            duration: 0.125,
+            transformOrigin: "50% 50%",
+            y: -8,
+            ease: "power2.inOut"
+        },
+        "slide"
+    )
+
+    .to(
+        hamburger,
+        {
+            duration: 0.35,
+            rotation: 360,
+            ease: "power4.inOut"
+        }
+    )
+
+    .to(
+        lineOne,
+        {
+            duration: 0.125,
+            rotation: 45,
+            ease: "power2.inOut"
+        },
+        "cross"
+    )
+
+    .to(
+        lineThree,
+        {
+            duration: 0.125,
+            rotation: -45,
+            ease: "power2.inOut"
+        },
+        "cross"
+    );
+
+
+// =========================
+// ABRIR MENÚ
+// =========================
+
+function abrirMenu() {
+
+    sideMenu.classList.add("open");
+    overlay.classList.add("active");
+    document.body.classList.add("menu-open");
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+    toggleMenuAnimation.play();
+}
+
+
+// =========================
+// CERRAR MENÚ
+// =========================
+
+function cerrarMenu() {
+
+    sideMenu.classList.remove("open");
+    overlay.classList.remove("active");
+    document.body.classList.remove("menu-open");
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+    toggleMenuAnimation.reverse();
+}
+
+
+// =========================
+// CLICK HAMBURGUESA / X
+// =========================
+
+menuToggle.addEventListener("click", () => {
+
+    const menuAbierto =
+        sideMenu.classList.contains("open");
+
+    if (menuAbierto) {
+        cerrarMenu();
+    } else {
+        abrirMenu();
+    }
+
+});
+
+
+// Cerrar haciendo clic afuera
+overlay.addEventListener("click", cerrarMenu);
+
+
+// Cerrar seleccionando una sección
+menuLinks.forEach((link) => {
+
+    link.addEventListener("click", cerrarMenu);
+
+});
+
+
+// Cerrar con Escape
+document.addEventListener("keydown", (event) => {
+
+    if (
+        event.key === "Escape" &&
+        sideMenu.classList.contains("open")
+    ) {
+        cerrarMenu();
+    }
+
+});
+
+
+// =========================
+// MODO OSCURO
+// =========================
+
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+});

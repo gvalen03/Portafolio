@@ -11,11 +11,14 @@
     --color-background: #F8FAFC;
     --color-card: #FFFFFF;
     --color-surface: #F1F5F9;
-
     --color-border: #CBD5E1;
     --color-text: #0F172A;
     --color-muted: #64748B;
     --color-white: #FFFFFF;
+
+    --menu-bg: #111827;
+    --menu-text: #F8FAFC;
+    --menu-hover: #1F2937;
 }
 
 * {
@@ -89,7 +92,19 @@ img {
    HEADER / NAVEGACIÓN
 ========================= */
 
-header,
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background-color: var(--color-primary);
+    color: var(--color-white);
+
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
 footer {
     padding: 20px 20px 30px;
     background-color: var(--color-primary);
@@ -104,6 +119,76 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    background-color: var(--color-primary);
+
+    z-index: 1002;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 15px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--color-white);
+
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.menu-toggle {
+    width: 45px;
+    height: 45px;
+
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 28px;
+    height: 3px;
+
+    background-color: var(--color-white);
+
+    border-radius: 5px;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.25s ease;
+}
+
+
 
 nav h2,
 nav a {
@@ -125,12 +210,196 @@ p {
 }
 
 /* =========================
+   MODO OSCURO
+========================= */
+
+body.dark-mode {
+    --color-background: #0F172A;
+    --color-card: #1E293B;
+    --color-surface: #334155;
+    --color-border: #475569;
+    --color-text: #F8FAFC;
+    --color-muted: #CBD5E1;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index: 999;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================
+   MENÚ LATERAL
+========================= */
+
+#hamburger {
+    width: 50px;
+    height: 50px;
+
+    overflow: visible;
+}
+
+#hamburger line {
+    fill: none;
+    stroke: var(--color-white);
+    stroke-width: 5;
+    stroke-linecap: round;
+}
+
+.menu-container {
+    width: 55px;
+    height: 55px;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    position: relative;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -360px;
+
+    width: 340px;
+    max-width: 85%;
+    height: 100vh;
+
+    padding: 120px 30px 30px;
+
+    background-color: #111827;
+    color: white;
+
+    z-index: 1001;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: right 0.4s ease;
+
+    box-shadow: -8px 0 25px rgba(0, 0, 0, 0.25);
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+.side-menu.open {
+    right: 0;
+}
+
+
+.side-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.side-menu-header h2 {
+    color: var(--color-white);
+    font-size: 1.5rem;
+}
+
+.close-menu {
+    background: transparent;
+    border: none;
+    color: var(--color-white);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* =========================
+   LINKS DEL MENÚ
+========================= */
+
+.side-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.side-nav a {
+    display: block;
+
+    padding: 15px 18px;
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    border-radius: 8px;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.side-nav a:hover {
+    background-color: #1F2937;
+    transform: translateX(5px);
+}
+
+/* =========================
+   PARTE INFERIOR DEL MENÚ
+========================= */
+
+.menu-extra {
+    margin-top: 30px;
+}
+
+.theme-toggle {
+    width: 100%;
+    padding: 14px 18px;
+
+    border: 1px solid #374151;
+    border-radius: 10px;
+
+    background-color: transparent;
+    color: var(--menu-text);
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.theme-toggle:hover {
+    background-color: var(--menu-hover);
+}
+
+/* =========================
    CONTENIDO GENERAL
 ========================= */
 
 main {
     max-width: 1200px;
     margin: 0 auto;
+    padding-top: 90px;
 }
 
 h1,
