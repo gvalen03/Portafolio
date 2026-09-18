@@ -149,38 +149,201 @@ if (botonProyectos) {
 // EVENTO DE FORMULARIO
 // =========================
 
+// =========================
+// VALIDACIÓN DEL FORMULARIO
+// =========================
+
 const formulario = document.getElementById("formulario-contacto");
 
-if (formulario) {
+const campoNombre = document.getElementById("nombre");
+const campoCorreo = document.getElementById("correo");
+const campoAsunto = document.getElementById("asunto");
+const campoMensaje = document.getElementById("mensaje");
 
-    formulario.addEventListener("submit", (event) => {
+const mensajeFormulario =
+    document.getElementById("mensaje-formulario");
 
-        event.preventDefault();
 
-        const nombreUsuario =
-            document.getElementById("nombre").value.trim();
+function mostrarError(campo, mensaje) {
 
-        const correo =
-            document.getElementById("correo").value.trim();
+    const formGroup = campo.parentElement;
 
-        const mensaje =
-            document.getElementById("mensaje").value.trim();
+    const errorMensaje =
+        formGroup.querySelector(".error-mensaje");
 
-        if (
-            nombreUsuario === "" ||
-            correo === "" ||
-            mensaje === ""
-        ) {
-            alert("Por favor completa todos los campos");
-            return;
-        }
+    formGroup.classList.add("error");
+    formGroup.classList.remove("correcto");
 
-        alert("Formulario enviado correctamente");
+    errorMensaje.textContent = mensaje;
+}
+
+
+function mostrarCorrecto(campo) {
+
+    const formGroup = campo.parentElement;
+
+    const errorMensaje =
+        formGroup.querySelector(".error-mensaje");
+
+    formGroup.classList.remove("error");
+    formGroup.classList.add("correcto");
+
+    errorMensaje.textContent = "";
+}
+
+
+function validarCorreo(correo) {
+
+    const expresion =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    return expresion.test(correo);
+}
+
+
+function validarFormulario() {
+
+    let formularioValido = true;
+
+    // Nombre
+    const nombre = campoNombre.value.trim();
+
+    if (nombre === "") {
+
+        mostrarError(
+            campoNombre,
+            "Ingresa tu nombre"
+        );
+
+        formularioValido = false;
+
+    } else if (nombre.length < 3) {
+
+        mostrarError(
+            campoNombre,
+            "El nombre debe tener al menos 3 caracteres"
+        );
+
+        formularioValido = false;
+
+    } else {
+
+        mostrarCorrecto(campoNombre);
+    }
+
+
+    // Correo
+    const correo = campoCorreo.value.trim();
+
+    if (correo === "") {
+
+        mostrarError(
+            campoCorreo,
+            "Ingresa tu correo electrónico"
+        );
+
+        formularioValido = false;
+
+    } else if (!validarCorreo(correo)) {
+
+        mostrarError(
+            campoCorreo,
+            "Ingresa un correo válido"
+        );
+
+        formularioValido = false;
+
+    } else {
+
+        mostrarCorrecto(campoCorreo);
+    }
+
+
+    // Asunto
+    const asunto = campoAsunto.value.trim();
+
+    if (asunto === "") {
+
+        mostrarError(
+            campoAsunto,
+            "Ingresa un asunto"
+        );
+
+        formularioValido = false;
+
+    } else {
+
+        mostrarCorrecto(campoAsunto);
+    }
+
+
+    // Mensaje
+    const mensaje = campoMensaje.value.trim();
+
+    if (mensaje === "") {
+
+        mostrarError(
+            campoMensaje,
+            "Escribe un mensaje"
+        );
+
+        formularioValido = false;
+
+    } else if (mensaje.length < 10) {
+
+        mostrarError(
+            campoMensaje,
+            "El mensaje debe tener al menos 10 caracteres"
+        );
+
+        formularioValido = false;
+
+    } else {
+
+        mostrarCorrecto(campoMensaje);
+    }
+
+
+    return formularioValido;
+}
+
+
+formulario.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    mensajeFormulario.textContent = "";
+    mensajeFormulario.className = "";
+
+    if (validarFormulario()) {
+
+        mensajeFormulario.textContent =
+            "Mensaje enviado correctamente.";
+
+        mensajeFormulario.classList.add("exito");
 
         formulario.reset();
-    });
 
-}
+        document
+            .querySelectorAll(".form-group")
+            .forEach((grupo) => {
+
+                grupo.classList.remove(
+                    "correcto",
+                    "error"
+                );
+
+            });
+
+    } else {
+
+        mensajeFormulario.textContent =
+            "Revisa los campos marcados.";
+
+        mensajeFormulario.classList.add("error");
+    }
+
+});
 
 // =========================
 // EVENTO DE TECLADO

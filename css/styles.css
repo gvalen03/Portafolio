@@ -213,6 +213,37 @@ p {
     font-weight: 400;
 }
 
+label {
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    padding: 10px;
+    background-color: var(--color-card);
+    color: var(--color-text);
+
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+
+    font-size: 1rem;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--color-muted);
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
 /* =========================
    MODO OSCURO
 ========================= */
@@ -926,68 +957,84 @@ button:hover,
    FORMULARIO
 ========================= */
 
-.contacto-contenedor {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-.contacto-info {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contacto-info a {
-    color: var(--color-accent);
-}
-
-.contacto-info a:hover {
-    text-decoration: underline;
-}
-
-#formulario-contacto {
-    max-width: 600px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#formulario-contacto div {
+.form-group {
     display: flex;
     flex-direction: column;
 }
 
-label {
-    margin-bottom: 5px;
-}
+.form-group input,
+.form-group textarea {
+    width: 100%;
 
-input,
-textarea {
-    padding: 10px;
+    padding: 12px 14px;
+
     background-color: var(--color-card);
     color: var(--color-text);
 
     border: 1px solid var(--color-border);
-    border-radius: 5px;
+    border-radius: 8px;
 
+    font-family: "Inter", sans-serif;
     font-size: 1rem;
 
+    outline: none;
+
     transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease;
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
 }
 
-input::placeholder,
-textarea::placeholder {
-    color: var(--color-muted);
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-accent);
+
+    box-shadow:
+        0 0 0 3px rgba(15, 118, 110, 0.15);
 }
 
-textarea {
-    min-height: 150px;
-    resize: vertical;
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #DC2626;
+
+    box-shadow:
+        0 0 0 3px rgba(220, 38, 38, 0.08);
+}
+
+.form-group.correcto input,
+.form-group.correcto textarea {
+    border-color: #16A34A;
+}
+
+.error-mensaje {
+    min-height: 18px;
+
+    margin-top: 6px;
+
+    color: #DC2626;
+
+    font-size: 0.85rem;
+}
+
+#mensaje-formulario {
+    min-height: 24px;
+
+    margin-top: 5px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+#mensaje-formulario.exito {
+    color: #16A34A;
+}
+
+#mensaje-formulario.error {
+    color: #DC2626;
+}
+
+.contacto-info a {
+    color: var(--color-accent);
 }
 
 button,
