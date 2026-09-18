@@ -152,10 +152,10 @@ nav {
 
 .nav-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: none;
 
     margin: 0 auto;
-    padding: 15px 25px;
+    padding: 15px 18px;
 
     display: flex;
     justify-content: space-between;
@@ -165,8 +165,8 @@ nav {
 .logo {
     color: var(--color-white);
 
-    font-family: "Poppins", sans-serif;
-    font-size: 1.5rem;
+    font-family: sans-serif, "Poppins", sans-serif;
+    font-size: 2rem;
     font-weight: 700;
 }
 
