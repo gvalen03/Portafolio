@@ -65,7 +65,7 @@ button,
 
 button:hover,
 .btn-contacto:hover {
-    background-color: #115E59;
+    background-color: var(--color-button-hover);
 }
 
 .interes-card,
@@ -204,21 +204,9 @@ nav {
         opacity 0.25s ease;
 }
 
-
-
-nav h2,
-nav a {
-    color: var(--color-white);
-}
-
 nav ul {
     display: flex;
     gap: 20px;
-}
-
-nav a:hover {
-    color: var(--color-accent);
-    text-decoration: underline;
 }
 
 p {
@@ -550,35 +538,44 @@ body.menu-open {
 
     padding: 18px 22px;
 
+    color: var(--menu-text);
+    background-color: transparent;
+
     border-radius: 10px;
 
-    color: white;
     text-decoration: none;
 
     font-family: "Poppins", sans-serif;
     font-size: 1.15rem;
     font-weight: 600;
 
-    text-align: left;
+    cursor: pointer;
 
     transition:
         background-color 0.3s ease,
-        transform 0.2s ease;
+        transform 0.3s ease,
+        color 0.3s ease;
 }
+
 
 .side-nav a:hover {
     background-color: var(--menu-hover);
+    color: var(--color-white);
 
-    transform: translateX(4px);
-
-    text-decoration: none;
+    transform: translateX(8px);
 }
 
-.side-nav a:focus,
-.side-nav a:active,
 .side-nav a:visited {
-    color: white;
-    text-decoration: none;
+    color: var(--menu-text);
+}
+
+.side-nav a:active {
+    transform: translateX(4px) scale(0.98);
+}
+
+.side-nav a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
 }
 
 /* =========================
