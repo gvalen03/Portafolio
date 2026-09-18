@@ -238,7 +238,6 @@ const hamburger = document.getElementById("hamburger");
 const sideMenu = document.getElementById("side-menu");
 const overlay = document.getElementById("overlay");
 const menuLinks = document.querySelectorAll(".menu-link");
-const themeToggle = document.getElementById("theme-toggle");
 
 const lineOne = hamburger.querySelector(".line-one");
 const lineTwo = hamburger.querySelector(".line-two");
@@ -400,6 +399,34 @@ document.addEventListener("keydown", (event) => {
 // MODO OSCURO
 // =========================
 
-themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
+const themeToggle = document.getElementById("theme-toggle");
+const themeLabel = document.querySelector(".theme-label");
+
+// Leer el tema guardado
+const temaGuardado = localStorage.getItem("tema");
+
+// Aplicar el tema al cargar la página
+if (temaGuardado === "oscuro") {
+    document.body.classList.add("dark-mode");
+    themeToggle.checked = false;
+    themeLabel.textContent = "Modo oscuro";
+} else {
+    document.body.classList.remove("dark-mode");
+    themeToggle.checked = true;
+    themeLabel.textContent = "Modo claro";
+}
+
+// Guardar el cambio cuando el usuario use el selector
+themeToggle.addEventListener("change", () => {
+    if (themeToggle.checked) {
+        document.body.classList.remove("dark-mode");
+        themeLabel.textContent = "Modo claro";
+
+        localStorage.setItem("tema", "claro");
+    } else {
+        document.body.classList.add("dark-mode");
+        themeLabel.textContent = "Modo oscuro";
+
+        localStorage.setItem("tema", "oscuro");
+    }
 });
