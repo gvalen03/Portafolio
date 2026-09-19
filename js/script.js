@@ -593,3 +593,90 @@ themeToggle.addEventListener("change", () => {
         localStorage.setItem("tema", "oscuro");
     }
 });
+
+consoleText(
+    [
+        "Holaaa, soy Gloria Idrobo",
+    ],
+    "text",
+    [
+        "#0F766E",
+        "#2563EB",
+        "#7C3AED"
+    ]
+);
+
+//INICIO 
+
+function consoleText(words, id, colors) {
+
+    if (colors === undefined) {
+        colors = ["#0F766E"];
+    }
+
+    let visible = true;
+    let letterCount = 1;
+    let direction = 1;
+    let waiting = false;
+
+    const target = document.getElementById(id);
+    const consoleCursor = document.getElementById("console");
+
+    target.style.color = colors[0];
+
+
+    setInterval(() => {
+
+        if (letterCount === 0 && !waiting) {
+
+            waiting = true;
+
+            setTimeout(() => {
+
+                colors.push(colors.shift());
+                words.push(words.shift());
+
+                direction = 1;
+
+                target.style.color = colors[0];
+
+                letterCount += direction;
+
+                waiting = false;
+
+            }, 1000);
+
+        } else if (
+            letterCount === words[0].length + 1 &&
+            !waiting
+        ) {
+
+            waiting = true;
+
+            setTimeout(() => {
+
+                direction = -1;
+
+                letterCount += direction;
+
+                waiting = false;
+
+            }, 1200);
+
+        } else if (!waiting) {
+
+            target.textContent =
+                words[0].substring(0, letterCount);
+
+            letterCount += direction;
+        }
+
+    }, 100);
+
+
+    setInterval(() => {
+
+        consoleCursor.classList.toggle("hidden");
+
+    }, 400);
+}
