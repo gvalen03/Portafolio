@@ -1,0 +1,258 @@
+/* =========================
+   RESPONSIVE GENERAL
+========================= */
+
+/* TABLET */
+@media (max-width: 900px) {
+
+    /* HEADER */
+
+    .header .logo {
+        font-size: 1.7rem;
+    }
+
+    .header .nav-container {
+        padding: 12px 14px;
+    }
+
+
+    /* INICIO */
+
+    .inicio-contenedor {
+        grid-template-columns: 240px 1fr;
+        gap: 30px;
+    }
+
+    .inicio-imagen-card img {
+        min-height: 360px;
+    }
+
+    .inicio-info-card {
+        padding: 30px;
+    }
+
+    .inicio-info-card h1 {
+        font-size: 2.2rem;
+    }
+
+    .console-container {
+        font-size: 1.6rem;
+    }
+
+
+    /* HABILIDADES */
+
+    .habilidades-contenedor {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    /* PROYECTOS */
+
+    #contenedor-proyectos {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* CONTACTO */
+
+    .contacto-contenedor {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media (max-width: 650px) {
+
+    /* HEADER */
+
+    .header .nav-container {
+        padding: 10px 12px;
+    }
+
+    .header .logo {
+        font-size: 1.5rem;
+    }
+
+    .header .menu-container {
+        width: 48px;
+        height: 48px;
+    }
+
+    #hamburger {
+        width: 44px;
+        height: 44px;
+    }
+
+
+    /* MENÚ LATERAL */
+
+    .side-menu {
+        width: 300px;
+        max-width: 88%;
+
+        padding:
+            100px
+            20px
+            25px;
+    }
+
+    .side-nav a {
+        padding: 15px 18px;
+
+        font-size: 1rem;
+    }
+
+
+    /* INICIO */
+
+    #inicio {
+        padding: 60px 20px;
+    }
+
+    .inicio-contenedor {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .inicio-imagen-card {
+        max-width: 260px;
+
+        margin: 0 auto;
+    }
+
+    .inicio-imagen-card img {
+        min-height: 340px;
+    }
+
+    .inicio-info-card {
+        padding: 28px;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .inicio-info-card h1 {
+        font-size: 2rem;
+    }
+
+    .inicio-info-card p {
+        font-size: 0.95rem;
+    }
+
+    .console-container {
+        justify-content: center;
+
+        font-size: 1.4rem;
+    }
+
+
+    /* SOBRE MÍ */
+
+    .intereses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-mi-contenido h3 {
+        font-size: 1.8rem;
+    }
+
+    .sobre-mi-contenido p {
+        font-size: 1rem;
+    }
+
+
+    /* HABILIDADES */
+
+    .habilidades-contenedor {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* CONTACTO */
+
+    .contacto-info,
+    #formulario-contacto {
+        padding: 22px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 11px 12px;
+    }
+
+    .form-group textarea {
+        min-height: 120px;
+    }
+}
+
+
+/* =========================
+   MÓVILES PEQUEÑOS
+========================= */
+
+@media (max-width: 480px) {
+
+    /* HEADER */
+
+    .header .logo {
+        font-size: 1.35rem;
+    }
+
+
+    /* INICIO */
+
+    .inicio-imagen-card {
+        max-width: 220px;
+    }
+
+    .inicio-imagen-card img {
+        min-height: 300px;
+    }
+
+    .inicio-info-card {
+        padding: 22px;
+    }
+
+    .inicio-info-card h1 {
+        font-size: 1.8rem;
+    }
+
+    .inicio-info-card p {
+        font-size: 0.9rem;
+    }
+
+    .console-container {
+        font-size: 1.25rem;
+    }
+
+
+    /* SELECTOR DE TEMA */
+
+    .theme-control {
+        gap: 14px;
+        padding: 12px 14px;
+    }
+
+    .theme-toggle {
+        --size: 25px;
+    }
+
+    .theme-label {
+        font-size: 0.9rem;
+    }
+
+
+    /* CONTACTO */
+
+    #contacto {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

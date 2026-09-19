@@ -1,0 +1,120 @@
+:root {
+    --color-primary: #1E293B;
+    --color-secondary: #334155;
+    --color-accent: #0F766E;
+    --color-accent-hover: #115E59;
+
+    --color-background: #F8FAFC;
+    --color-card: #FFFFFF;
+    --color-surface: #F1F5F9;
+    --color-border: #CBD5E1;
+    --color-text: #0F172A;
+    --color-muted: #64748B;
+    --color-white: #FFFFFF;
+
+    --color-header: #1E293B;
+
+    --menu-bg: #111827;
+    --menu-text: #F8FAFC;
+    --menu-hover: #1F2937;
+
+    --shadow-card: 0 4px 12px rgba(15, 23, 42, 0.08);
+
+    --color-button: #1E293B;
+    --color-button-hover: #1D4ED8;
+    --color-button-text: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--color-primary);
+    font-family: "Poppins", sans-serif;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 90px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--color-button-text);
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+p {
+    font-weight: 400;
+}
+
+section {
+    padding: 80px 20px;
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+
+#inicio,
+#habilidades {
+    background-color: var(--color-background);
+}
+
+#sobre-mi,
+#proyectos {
+    background-color: var(--color-section);
+}
+
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+footer {
+    padding: 20px 20px 30px;
+    background-color: var(--color-primary);
+    color: white;
+}

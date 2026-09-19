@@ -1,0 +1,256 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background-color: var(--color-primary);
+    color: var(--color-white);
+
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    background-color: var(--color-primary);
+
+    z-index: 1002;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+
+    background-color: var(--color-header);
+
+    transition: background-color 0.3s ease;
+}
+
+.header .nav-container {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+    padding: 15px 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    color: var(--color-white);
+
+    font-family: "Poppins", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.header .menu-container {
+    width: 55px;
+    height: 55px;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.menu-toggle {
+    width: 45px;
+    height: 45px;
+
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 28px;
+    height: 3px;
+
+    background-color: var(--color-white);
+
+    border-radius: 5px;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.25s ease;
+}
+
+/* =========================
+   MENÚ LATERAL
+========================= */
+
+#hamburger {
+    width: 50px;
+    height: 50px;
+
+    overflow: visible;
+}
+
+#hamburger line {
+    fill: none;
+    stroke: var(--color-white);
+    stroke-width: 5;
+    stroke-linecap: round;
+}
+
+.menu-container {
+    width: 55px;
+    height: 55px;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    position: relative;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -360px;
+
+    width: 340px;
+    max-width: 85%;
+    height: 100vh;
+
+    padding: 120px 30px 30px;
+
+    background-color: #111827;
+    color: white;
+
+    z-index: 1001;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: right 0.4s ease;
+
+    box-shadow: -8px 0 25px rgba(0, 0, 0, 0.25);
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+.side-menu.open {
+    right: 0;
+}
+
+
+.side-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.side-menu-header h2 {
+    color: var(--color-white);
+    font-size: 1.5rem;
+}
+
+.close-menu {
+    background: transparent;
+    border: none;
+    color: var(--color-white);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.side-nav {
+    width: 100%;
+}
+
+.side-nav ul {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 14px;
+}
+
+.side-nav li {
+    width: 100%;
+}
+
+.side-nav a {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 18px 22px;
+
+    color: var(--menu-text);
+    background-color: transparent;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.side-nav a:hover {
+    background-color: var(--menu-hover);
+    color: var(--color-white);
+
+    transform: translateX(8px);
+}
+
+.side-nav a:visited {
+    color: var(--menu-text);
+}
+
+.side-nav a:active {
+    transform: translateX(4px) scale(0.98);
+}
+
+.side-nav a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}

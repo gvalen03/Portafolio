@@ -1,0 +1,38 @@
+#contenedor-proyectos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#contenedor-proyectos article {
+    background-color: var(--color-card);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contenedor-proyectos article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+#contenedor-proyectos h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+#contenedor-proyectos p {
+    margin-bottom: 15px;
+    color: var(--color-muted);
+}
+
+#contenedor-proyectos a {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+}
