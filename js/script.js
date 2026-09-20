@@ -596,7 +596,7 @@ themeToggle.addEventListener("change", () => {
 
 consoleText(
     [
-        "Holaaa, soy Gloria Idrobo",
+        "Hello World!", "Coding is fun!", "Welcome to my portfolio!"
     ],
     "text",
     [

@@ -79,26 +79,41 @@
 
         <!-- INICIO -->
         <section id="inicio">
+            <div class="inicio-fondo"></div>
 
-            <div class="inicio-imagen">
-                <img src="img/foto-portafolio.jpg" alt="Fotografía de Gloria Idrobo">
-            </div>
+            <div class="inicio-contenedor">
 
-            <div class="inicio-contenido-card">
-
-                <div class="console-container">
-                    <span id="text"></span>
-                    <span class="console-underscore" id="console">_</span>
+                <div class="inicio-card inicio-card-imagen">
+                    <img src="img/foto-portafolio.jpg" alt="Foto de Gloria Idrobo">
                 </div>
 
-                <p>
-                    Estudiante y desarrolladora interesada en tecnología,
-                    programación y desarrollo web.
-                </p>
+                <div class="inicio-card inicio-card-info">
+                    <span class="inicio-etiqueta">Portafolio personal</span>
 
-                <button id="btn-proyectos">
-                    Ver proyectos
-                </button>
+                    <h1>Hola, soy Gloria Idrobo</h1>
+
+                    <div class="console-container">
+                        <span id="text"></span>
+                        <span class="console-underscore" id="console">_</span>
+                    </div>
+
+                    <p>
+                        Estudiante y desarrolladora interesada en tecnología,
+                        programación y desarrollo web.
+                    </p>
+
+                    <div class="inicio-botones">
+                        <button id="btn-proyectos" class="btn btn-principal">
+                            Ver proyectos
+                        </button>
+
+                        <a href="#contacto" class="btn btn-secundario">
+                            Contáctame
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
 
@@ -145,7 +160,7 @@
                         </article>
                     </div>
 
-                    <a href="#contacto" class="btn-contacto">
+                    <a href="#contacto" class="btn btn-contacto">
                         Contáctame
                     </a>
                 </div>
@@ -300,7 +315,7 @@
                     </div>
 
 
-                    <button type="submit">
+                    <button type="submit" class="btn">
                         Enviar mensaje
                     </button>
 
