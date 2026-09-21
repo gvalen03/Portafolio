@@ -641,6 +641,10 @@ function consoleText(words, id, colors) {
     const target = document.getElementById(id);
     const consoleCursor = document.getElementById("console");
 
+    if (!target || !consoleCursor) {
+        return;
+    }
+
     target.style.color = colors[0];
 
 
@@ -695,7 +699,24 @@ function consoleText(words, id, colors) {
 
     setInterval(() => {
 
-        consoleCursor.classList.toggle("hidden");
+        visible = !visible;
+
+        consoleCursor.style.opacity =
+            visible ? "1" : "0";
 
     }, 400);
 }
+
+consoleText(
+    [
+        "Hello World!",
+        "Coding is fun!",
+        "Welcome to my portfolio!"
+    ],
+    "text",
+    [
+        "#0F766E",
+        "#2563EB",
+        "#7C3AED"
+    ]
+);
