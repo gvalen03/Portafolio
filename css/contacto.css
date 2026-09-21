@@ -1,5 +1,12 @@
 #contacto {
-    padding: 80px 20px;
+    padding: 90px 30px;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(15, 118, 110, 0.06),
+            transparent 28%
+        ),
+        var(--color-background);
 }
 
 .contacto-contenedor {
@@ -9,7 +16,7 @@
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.4fr);
+    grid-template-columns: 0.8fr 1.4fr;
 
     gap: 35px;
 
@@ -17,53 +24,65 @@
 }
 
 .contacto-info {
-    width: 100%;
-
-    padding: 30px;
+    padding: 32px;
 
     background-color: var(--color-card);
 
     border: 1px solid var(--color-border);
-    border-radius: 16px;
+    border-radius: 18px;
 
-    box-shadow: var(--shadow-card);
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
 
     display: flex;
     flex-direction: column;
-    gap: 20px;
+
+    gap: 22px;
 }
 
 .contacto-info h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    margin: 0;
 }
 
 .contacto-info > p {
     color: var(--color-muted);
-    line-height: 1.6;
+
+    font-size: 0.95rem;
+    line-height: 1.7;
 }
 
 .contacto-dato {
     display: flex;
     flex-direction: column;
 
-    gap: 5px;
+    gap: 6px;
 
-    padding-top: 15px;
+    padding-top: 18px;
 
     border-top: 1px solid var(--color-border);
 }
 
 .contacto-dato strong {
     color: var(--color-text);
+    font-size: 0.9rem;
 }
 
 .contacto-dato a {
     color: var(--color-accent);
-    word-break: break-word;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .contacto-dato a:hover {
-    text-decoration: underline;
+    color: var(--color-accent-hover);
+
+    transform: translateX(3px);
 }
 
 label {
@@ -97,23 +116,6 @@ textarea {
     resize: vertical;
 }
 
-.btn-contacto {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 14px 28px;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: opacity 0.3s ease;
-}
-
-button:hover,
-.btn-contacto:hover {
-    background-color: var(--color-secondary);
-    opacity: 0.85;
-}
-
 /* =========================
    FORMULARIO
 ========================= */
@@ -121,14 +123,15 @@ button:hover,
 #formulario-contacto {
     width: 100%;
 
-    padding: 30px;
+    padding: 35px;
 
     background-color: var(--color-card);
 
     border: 1px solid var(--color-border);
-    border-radius: 16px;
+    border-radius: 18px;
 
-    box-shadow: var(--shadow-card);
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
 
     display: flex;
     flex-direction: column;
@@ -176,11 +179,127 @@ button:hover,
 .form-group textarea:focus {
     border-color: var(--color-accent);
 
+    background-color: var(--color-card);
+
     box-shadow:
-        0 0 0 3px rgba(15, 118, 110, 0.15);
+        0 0 0 4px rgba(15, 118, 110, 0.10);
+
+    transform: translateY(-1px);
 }
 
 .form-group textarea {
-    min-height: 130px;
+    min-height: 140px;
+
     resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--color-muted);
+}
+
+/* =========================
+   MENSAJE DE VALIDACIÓN
+========================= */
+
+.error-mensaje {
+    min-height: 18px;
+
+    margin-top: 6px;
+
+    color: #DC2626;
+
+    font-size: 0.82rem;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #DC2626;
+
+    box-shadow:
+        0 0 0 3px rgba(220, 38, 38, 0.08);
+}
+
+.form-group.correcto input,
+.form-group.correcto textarea {
+    border-color: #16A34A;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 163, 74, 0.08);
+}
+
+/* =========================
+   TOAST / NOTIFICACIÓN
+========================= */
+
+.toast {
+    position: fixed;
+    visibility: hidden;
+
+    top: 110px;
+    right: 25px;
+
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 280px;
+    max-width: 360px;
+
+    padding: 14px 18px;
+
+    background-color: var(--color-card);
+    color: var(--color-text);
+
+    border: 1px solid var(--color-border);
+    border-left: 4px solid #16A34A;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.15);
+
+    opacity: 0;
+
+    transform: translateX(30px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.toast.mostrar {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateX(0);
+}
+
+.toast-icon {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background-color: rgba(22, 163, 74, 0.12);
+    color: #16A34A;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+#toast-mensaje {
+    font-size: 0.9rem;
+    font-weight: 500;
 }

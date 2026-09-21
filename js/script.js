@@ -144,11 +144,6 @@ if (botonProyectos) {
     });
 }
 
-
-// =========================
-// EVENTO DE FORMULARIO
-// =========================
-
 // =========================
 // VALIDACIÓN DEL FORMULARIO
 // =========================
@@ -160,14 +155,17 @@ const campoCorreo = document.getElementById("correo");
 const campoAsunto = document.getElementById("asunto");
 const campoMensaje = document.getElementById("mensaje");
 
-const mensajeFormulario =
-    document.getElementById("mensaje-formulario");
+const toast = document.getElementById("toast");
+const toastMensaje = document.getElementById("toast-mensaje");
 
+
+// =========================
+// MOSTRAR ERROR
+// =========================
 
 function mostrarError(campo, mensaje) {
 
     const formGroup = campo.parentElement;
-
     const errorMensaje =
         formGroup.querySelector(".error-mensaje");
 
@@ -178,10 +176,13 @@ function mostrarError(campo, mensaje) {
 }
 
 
+// =========================
+// CAMPO CORRECTO
+// =========================
+
 function mostrarCorrecto(campo) {
 
     const formGroup = campo.parentElement;
-
     const errorMensaje =
         formGroup.querySelector(".error-mensaje");
 
@@ -192,6 +193,10 @@ function mostrarCorrecto(campo) {
 }
 
 
+// =========================
+// VALIDAR CORREO
+// =========================
+
 function validarCorreo(correo) {
 
     const expresion =
@@ -201,11 +206,16 @@ function validarCorreo(correo) {
 }
 
 
+// =========================
+// VALIDAR FORMULARIO
+// =========================
+
 function validarFormulario() {
 
     let formularioValido = true;
 
-    // Nombre
+
+    // NOMBRE
     const nombre = campoNombre.value.trim();
 
     if (nombre === "") {
@@ -232,7 +242,7 @@ function validarFormulario() {
     }
 
 
-    // Correo
+    // CORREO
     const correo = campoCorreo.value.trim();
 
     if (correo === "") {
@@ -259,7 +269,7 @@ function validarFormulario() {
     }
 
 
-    // Asunto
+    // ASUNTO
     const asunto = campoAsunto.value.trim();
 
     if (asunto === "") {
@@ -277,7 +287,7 @@ function validarFormulario() {
     }
 
 
-    // Mensaje
+    // MENSAJE
     const mensaje = campoMensaje.value.trim();
 
     if (mensaje === "") {
@@ -308,41 +318,50 @@ function validarFormulario() {
 }
 
 
+// =========================
+// TOAST
+// =========================
+
+function mostrarToast(mensaje) {
+
+    toastMensaje.textContent = mensaje;
+
+    toast.classList.add("mostrar");
+
+    setTimeout(() => {
+        toast.classList.remove("mostrar");
+    }, 3000);
+}
+
+
+// =========================
+// ENVIAR FORMULARIO
+// =========================
+
 formulario.addEventListener("submit", (event) => {
 
     event.preventDefault();
 
-    mensajeFormulario.textContent = "";
-    mensajeFormulario.className = "";
-
-    if (validarFormulario()) {
-
-        mensajeFormulario.textContent =
-            "Mensaje enviado correctamente.";
-
-        mensajeFormulario.classList.add("exito");
-
-        formulario.reset();
-
-        document
-            .querySelectorAll(".form-group")
-            .forEach((grupo) => {
-
-                grupo.classList.remove(
-                    "correcto",
-                    "error"
-                );
-
-            });
-
-    } else {
-
-        mensajeFormulario.textContent =
-            "Revisa los campos marcados.";
-
-        mensajeFormulario.classList.add("error");
+    if (!validarFormulario()) {
+        return;
     }
 
+    mostrarToast(
+        "Mensaje enviado correctamente."
+    );
+
+    formulario.reset();
+
+    document
+        .querySelectorAll(".form-group")
+        .forEach((grupo) => {
+
+            grupo.classList.remove(
+                "correcto",
+                "error"
+            );
+
+        });
 });
 
 // =========================
