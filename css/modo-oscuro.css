@@ -14,12 +14,18 @@ body.dark-mode {
 
     --color-header: #020617;
 
-    --color-button: #FFFFFF;
-    --color-button-hover: #fcfcf8;
-    --color-button-text: #0F172A;
+    --color-button: #334155;
+    --color-button-hover: #475569;
+    --color-button-text: #FFFFFF;
 
-    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-card:
+        0 4px 16px rgba(0, 0, 0, 0.3);
 }
+
+
+/* =========================
+   OVERLAY
+========================= */
 
 .overlay {
     position: fixed;
@@ -42,15 +48,10 @@ body.dark-mode {
     visibility: visible;
 }
 
-/* =========================
-   SELECTOR CLARO / OSCURO
-========================= */
 
-.menu-extra {
-    padding-top: 20px;
-    display: flex;
-    justify-content: flex-start;
-}
+/* =========================
+   CAMPOS FORMULARIO
+========================= */
 
 input:not(.theme-toggle),
 textarea {
@@ -75,85 +76,132 @@ textarea::placeholder {
     color: var(--color-muted);
 }
 
+
+/* =========================
+   SELECTOR DE TEMA
+========================= */
+
 .theme-control {
-    display: inline-flex;
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+
+    padding: 0;
+
+    display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
-    gap: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
 
-    width: 170px;
-
-    padding: 14px 16px;
-
-    border: 1px solid #374151;
-    border-radius: 12px;
-
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color: rgba(255, 255, 255, 0.06);
 }
 
-.theme-toggle {
-    --size: 28px;
 
+/* =========================
+   LUNA
+========================= */
+
+.theme-toggle {
     appearance: none;
     -webkit-appearance: none;
 
-    width: var(--size);
-    height: var(--size);
+    width: 22px;
+    height: 22px;
 
-    min-width: var(--size);
+    min-width: 22px;
 
     margin: 0;
     padding: 0;
 
-    border: 0;
+    position: relative;
+
+    border: none;
     border-radius: 50%;
 
-    background: transparent;
-
-    color: #E0E7FF;
+    background-color: #FFFFFF;
 
     cursor: pointer;
 
-    box-shadow:
-        inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+    box-shadow: none;
 
     transition:
-        transform 0.5s ease,
-        color 0.5s ease,
-        box-shadow 0.5s ease;
+        transform 0.3s ease,
+        background-color 0.3s ease;
 }
 
-/* SOL */
+
+/* Recorte que forma la luna */
+.theme-toggle::after {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    top: -3px;
+    left: 7px;
+
+    border-radius: 50%;
+
+    background-color: var(--color-header);
+}
+
+
+/* =========================
+   SOL
+========================= */
 
 .theme-toggle:checked {
-    --ray-size: calc(var(--size) * -0.4);
-    --offset-orthogonal: calc(var(--size) * 0.65);
-    --offset-diagonal: calc(var(--size) * 0.45);
+    --ray-size: -7px;
+    --offset-orthogonal: 12px;
+    --offset-diagonal: 9px;
+
+    background-color: #FBBF24;
 
     transform: scale(0.75);
 
-    color: #FBBF24;
-
     box-shadow:
-        inset 0 0 0 var(--size),
+        0 0 0 2px #FBBF24,
 
-        calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+        calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size) #FBBF24,
+        var(--offset-orthogonal) 0 0 var(--ray-size) #FBBF24,
 
-        var(--offset-orthogonal) 0 0 var(--ray-size),
+        0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size) #FBBF24,
+        0 var(--offset-orthogonal) 0 var(--ray-size) #FBBF24,
 
-        0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+        calc(var(--offset-diagonal) * -1)
+        calc(var(--offset-diagonal) * -1)
+        0 var(--ray-size) #FBBF24,
 
-        0 var(--offset-orthogonal) 0 var(--ray-size),
+        var(--offset-diagonal)
+        var(--offset-diagonal)
+        0 var(--ray-size) #FBBF24,
 
-        calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
+        calc(var(--offset-diagonal) * -1)
+        var(--offset-diagonal)
+        0 var(--ray-size) #FBBF24,
 
-        var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
-
-        calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
-
-        var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
+        var(--offset-diagonal)
+        calc(var(--offset-diagonal) * -1)
+        0 var(--ray-size) #FBBF24;
 }
+
+.theme-toggle:checked::after {
+    display: none;
+}
+
+.theme-toggle:checked::after {
+    display: none;
+}
+
+
+/* =========================
+   HOVER
+========================= */
 
 .theme-toggle:hover {
     transform: scale(1.08);
@@ -161,15 +209,4 @@ textarea::placeholder {
 
 .theme-toggle:checked:hover {
     transform: scale(0.82);
-}
-
-.theme-label {
-    color: var(--menu-text);
-
-    font-family: "Inter", sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
-
-    cursor: pointer;
-    white-space: nowrap;
 }

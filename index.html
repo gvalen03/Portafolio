@@ -28,17 +28,32 @@
                 Mi Portafolio
             </a>
 
-            <link href="https://fonts.googleapis.com/css2?family=Khula:wght@700&display=swap" rel="stylesheet">
+            <nav class="desktop-nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
 
-            <button class="menu-container" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
-                <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                    <line class="line-one" x1="25" y1="42" x2="75" y2="42" />
+            <div class="header-actions">
 
-                    <line class="line-two" x1="25" y1="50" x2="75" y2="50" />
+                <div class="theme-control header-theme">
+                    <input id="theme-toggle" class="theme-toggle" type="checkbox" aria-label="Cambiar tema">
+                </div>
 
-                    <line class="line-three" x1="25" y1="58" x2="75" y2="58" />
-                </svg>
-            </button>
+                <button class="menu-container" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+
+                        <line class="line-one" x1="25" y1="42" x2="75" y2="42" />
+
+                        <line class="line-two" x1="25" y1="50" x2="75" y2="50" />
+
+                        <line class="line-three" x1="25" y1="58" x2="75" y2="58" />
+                    </svg>
+                </button>
+
+            </div>
 
         </div>
     </header>
@@ -56,21 +71,6 @@
                 <li><a href="#contacto" class="menu-link">Contacto</a></li>
             </ul>
         </nav>
-        <!-- MODO OSCURO -->
-        <!-- MODO OSCURO -->
-        <div class="menu-extra">
-
-            <div class="theme-control">
-
-                <input id="theme-toggle" class="theme-toggle" type="checkbox" aria-label="Cambiar tema">
-
-                <label for="theme-toggle" class="theme-label">
-                    Modo claro
-                </label>
-
-            </div>
-
-        </div>
 
     </aside>
 

@@ -12,8 +12,15 @@
     }
 
     .header .nav-container {
-        padding: 12px 14px;
-    }
+    width: 100%;
+
+    padding: 14px 28px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+}
 
 
     /* INICIO */
@@ -72,8 +79,19 @@
     }
 
     .header .logo {
-        font-size: 1.5rem;
-    }
+    color: var(--color-white);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+}
 
     .header .menu-container {
         width: 48px;
@@ -261,4 +279,16 @@
         padding-left: 15px;
         padding-right: 15px;
     }
+}
+
+@media (max-width: 900px) {
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .header .menu-container {
+        display: flex;
+    }
+
 }

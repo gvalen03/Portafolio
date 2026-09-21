@@ -576,54 +576,54 @@ document.addEventListener("keydown", (event) => {
 
 });
 
-
 // =========================
 // MODO OSCURO
 // =========================
 
-const themeToggle = document.getElementById("theme-toggle");
-const themeLabel = document.querySelector(".theme-label");
+const themeToggle =
+    document.getElementById("theme-toggle");
 
-// Leer el tema guardado
-const temaGuardado = localStorage.getItem("tema");
+const temaGuardado =
+    localStorage.getItem("tema");
 
-// Aplicar el tema al cargar la página
+
+// Aplicar tema guardado al cargar
 if (temaGuardado === "oscuro") {
+
     document.body.classList.add("dark-mode");
-    themeToggle.checked = false;
-    themeLabel.textContent = "Modo oscuro";
-} else {
-    document.body.classList.remove("dark-mode");
+
     themeToggle.checked = true;
-    themeLabel.textContent = "Modo claro";
+
+} else {
+
+    document.body.classList.remove("dark-mode");
+
+    themeToggle.checked = false;
 }
 
-// Guardar el cambio cuando el usuario use el selector
+
+// Cambiar tema
 themeToggle.addEventListener("change", () => {
+
     if (themeToggle.checked) {
-        document.body.classList.remove("dark-mode");
-        themeLabel.textContent = "Modo claro";
 
-        localStorage.setItem("tema", "claro");
-    } else {
         document.body.classList.add("dark-mode");
-        themeLabel.textContent = "Modo oscuro";
 
-        localStorage.setItem("tema", "oscuro");
+        localStorage.setItem(
+            "tema",
+            "oscuro"
+        );
+
+    } else {
+
+        document.body.classList.remove("dark-mode");
+
+        localStorage.setItem(
+            "tema",
+            "claro"
+        );
     }
 });
-
-consoleText(
-    [
-        "Hello World!", "Coding is fun!", "Welcome to my portfolio!"
-    ],
-    "text",
-    [
-        "#0F766E",
-        "#2563EB",
-        "#7C3AED"
-    ]
-);
 
 //INICIO 
 
