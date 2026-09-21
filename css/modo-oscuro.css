@@ -194,11 +194,6 @@ textarea::placeholder {
     display: none;
 }
 
-.theme-toggle:checked::after {
-    display: none;
-}
-
-
 /* =========================
    HOVER
 ========================= */
@@ -209,4 +204,25 @@ textarea::placeholder {
 
 .theme-toggle:checked:hover {
     transform: scale(0.82);
+}
+
+body.dark-mode #inicio {
+    background-color: #0F172A;
+}
+
+body.dark-mode .inicio-fondo {
+    background-color: #0F172A;
+}
+
+body.dark-mode .inicio-card {
+    background-color: #1E293B;
+    color: #F8FAFC;
+}
+
+body.dark-mode .inicio-card-info h1 {
+    color: #F8FAFC;
+}
+
+body.dark-mode .inicio-card-info p {
+    color: #CBD5E1;
 }

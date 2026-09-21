@@ -5,6 +5,7 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
+    background-color: var(--color-background);
 }
 
 .inicio-fondo {
@@ -13,12 +14,30 @@
     z-index: 0;
 
     background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(15, 118, 110, 0.08), transparent 30%),
-        radial-gradient(#dbe4f0 1px, transparent 1px);
+        radial-gradient(
+            circle at top left,
+            rgba(37, 99, 235, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(15, 118, 110, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            var(--color-border) 1px,
+            transparent 1px
+        );
 
-    background-size: auto, auto, 22px 22px;
-    background-color: #f8fafc;
+    background-size:
+        auto,
+        auto,
+        22px 22px;
+
+    background-color: var(--color-background);
+
+    transition:
+        background-color 0.3s ease;
 }
 
 .inicio-contenedor {
@@ -36,13 +55,19 @@
 }
 
 .inicio-card {
-    background-color: rgba(255, 255, 255, 0.78);
+    background-color: var(--color-card);
+    color: var(--color-text);
     backdrop-filter: blur(10px);
 
-    border: 1px solid rgba(203, 213, 225, 0.8);
+    border: 1px solid var(--color-border);
     border-radius: 24px;
 
     box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
 }
 
 .inicio-card-imagen {
@@ -68,8 +93,8 @@
     padding: 8px 14px;
 
     border-radius: 999px;
-    background-color: #e0ecff;
-    color: #2563eb;
+    background-color: var(--color-surface);
+    color: var(--color-text);
 
     font-size: 0.9rem;
     font-weight: 600;
@@ -78,7 +103,7 @@
 .inicio-card-info h1 {
     font-size: 3.1rem;
     line-height: 1.1;
-    color: #1e293b;
+    color: var(--color-text);
     margin-bottom: 16px;
 }
 
@@ -101,7 +126,7 @@
     max-width: 620px;
     font-size: 1.08rem;
     line-height: 1.7;
-    color: #475569;
+    color: var(--color-muted);
     margin-bottom: 28px;
 }
 

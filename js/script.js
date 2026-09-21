@@ -601,7 +601,25 @@ if (temaGuardado === "oscuro") {
     themeToggle.checked = false;
 }
 
+// Actualizar color de la consola según el tema
+function actualizarColorConsola() {
 
+    const textoConsola =
+        document.getElementById("text");
+
+    if (!textoConsola) {
+        return;
+    }
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        textoConsola.style.color = "#60A5FA";
+
+    } else {
+
+        textoConsola.style.color = "#2563EB";
+    }
+}
 // Cambiar tema
 themeToggle.addEventListener("change", () => {
 
@@ -623,6 +641,7 @@ themeToggle.addEventListener("change", () => {
             "claro"
         );
     }
+    actualizarColorConsola();
 });
 
 //INICIO 
@@ -707,6 +726,23 @@ function consoleText(words, id, colors) {
     }, 400);
 }
 
+const coloresConsolaClaro = [
+    "#0F766E",
+    "#2563EB",
+    "#7C3AED"
+];
+
+const coloresConsolaOscuro = [
+    "#5EEAD4",
+    "#60A5FA",
+    "#C084FC"
+];
+
+const coloresConsola =
+    document.body.classList.contains("dark-mode")
+        ? coloresConsolaOscuro
+        : coloresConsolaClaro;
+
 consoleText(
     [
         "Hello World!",
@@ -714,9 +750,5 @@ consoleText(
         "Welcome to my portfolio!"
     ],
     "text",
-    [
-        "#0F766E",
-        "#2563EB",
-        "#7C3AED"
-    ]
+    coloresConsola
 );
