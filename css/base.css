@@ -23,6 +23,10 @@
     --color-button: #1E293B;
     --color-button-hover: #0F172A;
     --color-button-text: #FFFFFF;
+
+    --footer-background: #1E293B;
+    --footer-text: #F8FAFC;
+    --footer-border: #334155;
 }
 
 * {
@@ -48,9 +52,9 @@ body {
 h1,
 h2,
 h3,
-h4 {
-    color: var(--color-primary);
-    font-family: "Poppins", sans-serif;
+h4,
+.logo {
+    font-family: "Montserrat", sans-serif;
 }
 
 main {
@@ -153,7 +157,22 @@ section h2 {
 }
 
 footer {
-    padding: 20px 20px 30px;
-    background-color: var(--color-primary);
-    color: var(--color-white);
+    padding: 22px 30px;
+
+    background-color: var(--footer-background);
+    color: var(--footer-text);
+
+    border-top: 1px solid var(--footer-border);
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+footer p {
+    margin: 0;
+
+    font-size: 0.9rem;
+    text-align: center;
 }

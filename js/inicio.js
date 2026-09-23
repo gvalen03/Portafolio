@@ -9,9 +9,9 @@ const coloresClaro = [
 ];
 
 const coloresOscuro = [
-    "#5EEAD4",
-    "#60A5FA",
-    "#C084FC"
+    "#EABF3A",
+    "#F5D66F",
+    "#E7E5E4"
 ];
 
 
