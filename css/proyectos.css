@@ -1,3 +1,137 @@
+#proyectos {
+    padding: 90px 30px;
+
+    background-color:
+        var(--color-background);
+}
+
+
+#proyectos > h2,
+#proyectos > .descripcion-seccion {
+    max-width: 1100px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#proyectos > h2 {
+    margin-bottom: 12px;
+}
+
+
+#proyectos .descripcion-seccion {
+    margin-bottom: 35px;
+
+    color: var(--color-muted);
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.proyectos-grid {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* =========================
+   TARJETA
+========================= */
+
+.proyecto-card {
+    position: relative;
+
+    padding: 30px;
+
+    background-color:
+        var(--color-card);
+
+    border:
+        1px solid var(--color-border);
+
+    border-radius: 18px;
+
+    box-shadow:
+        var(--shadow-card);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.proyecto-card p {
+    color:
+        var(--color-muted);
+
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+.proyecto-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.proyecto-tecnologias span {
+    padding: 7px 11px;
+
+    background-color:
+        var(--color-surface);
+
+    color:
+        var(--color-text);
+
+    border-radius: 8px;
+
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+.proyecto-acciones {
+    margin-top: auto;
+
+    padding-top: 8px;
+}
+
+.proyecto-card:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        var(--color-accent);
+
+    box-shadow:
+        0 15px 35px
+        rgba(15, 23, 42, 0.12);
+}
+
+
+.proyecto-contenido {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
 #contenedor-proyectos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

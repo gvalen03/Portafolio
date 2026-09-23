@@ -16,14 +16,41 @@ export const perfil = {
 
 export const proyectos = [
     {
-        nombre: "Portafolio personal",
-        tecnologia: "HTML, CSS y JavaScript",
-        terminado: false
+        nombre: "Papelería Vibras",
+
+        descripcion:
+            "Miniproyecto web de una papelería con catálogo de productos, buscador y carrito de compras.",
+
+        tecnologias: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        repositorio:
+            "https://github.com/gvalen03/Tienda.git",
+
+        estado:
+            "Finalizado"
     },
+
     {
-        nombre: "Proyecto académico",
-        tecnologia: "Java",
-        terminado: true
+        nombre: "Sistema Experto",
+
+        descripcion:
+            "Sistema experto desarrollado con Java, Prolog y SQLite.",
+
+        tecnologias: [
+            "Java",
+            "Prolog",
+            "SQLite"
+        ],
+
+        repositorio:
+            "https://github.com/gvalen03/sistema-medico.git",
+
+        estado:
+            "Finalizado"
     }
 ];
 
